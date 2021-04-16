@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Sidebar from '../components/Sidebar'
 import Body from '../components/Body'
+import Upload from '../components/Upload'
 
 const Home: React.FC = () => {
   const [session, loading] = useSession()
@@ -14,9 +15,10 @@ const Home: React.FC = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <div className="flex">
-        {!session && (
+      {/* <Navbar /> */}
+      <Upload />
+      {/* <div className="flex"> */}
+      {/* {!session && (
           <>
             Not signed in <br />
             <button onClick={(): Promise<void> => signIn('auth0')}>
@@ -31,11 +33,11 @@ const Home: React.FC = () => {
               Sign out
             </button>
           </>
-        )}
-        <Sidebar />
-        <Body />
-      </div>
-      <Footer />
+        )} */}
+      {/* <Sidebar /> */}
+      {/* <Body /> */}
+      {/* </div> */}
+      {/* <Footer /> */}
     </>
   )
 }
