@@ -15,10 +15,10 @@ const Home: React.FC = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Navbar /> */}
-      <Upload />
-      {/* <div className="flex"> */}
-      {/* {!session && (
+      <Navbar />
+      {/* <Upload /> */}
+      <div className="flex">
+        {!session && (
           <>
             Not signed in <br />
             <button onClick={(): Promise<void> => signIn('auth0')}>
@@ -33,11 +33,11 @@ const Home: React.FC = () => {
               Sign out
             </button>
           </>
-        )} */}
-      {/* <Sidebar /> */}
-      {/* <Body /> */}
-      {/* </div> */}
-      {/* <Footer /> */}
+        )}
+        <Sidebar />
+        <Body />
+      </div>
+      <Footer />
     </>
   )
 }
