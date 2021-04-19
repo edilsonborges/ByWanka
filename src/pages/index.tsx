@@ -16,7 +16,6 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {/* <Upload /> */}
       <div className="flex">
         {!session && (
           <>
@@ -35,6 +34,7 @@ const Home: React.FC = () => {
           </>
         )}
         <Sidebar />
+        {/* <Upload /> */}
         <Body />
       </div>
       <Footer />
