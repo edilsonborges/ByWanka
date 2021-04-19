@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'next-auth/client'
-import '../../styles/main.css'
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }) {
   return (
