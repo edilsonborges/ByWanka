@@ -3,7 +3,7 @@ import React from 'react'
 export default function Search() {
   return (
     <div className="flex flex-col">
-      <div className="relative pt-6 flex-row  self-center">
+      <div className="relative pt-6 flex-row self-center">
         <span className="absolute inset-y-0 left-0 top-6 pl-2 flex items-center">
           <svg
             className="h-5 w-5 text-gray-400"
@@ -18,7 +18,7 @@ export default function Search() {
           </svg>
         </span>
         <input
-          className=" border p-2 pl-10 outline-none rounded-lg w-480 focus:border-blue-500 focus:shadow-outline"
+          className=" border p-2 pl-10 outline-none rounded-lg w-80 lg:w-480 focus:border-blue-500 focus:shadow-outline"
           type="text"
           placeholder="O que está procurando?"
         />

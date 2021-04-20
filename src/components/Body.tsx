@@ -15,7 +15,7 @@ const Card = (data) => {
         height="400"
         alt=""
       />
-      <div className=" absolute bottom-0 rounded-b-lg bg-white px-5 p-6 shadow-md w-full">
+      <div className="absolute bottom-0 rounded-b-lg bg-white px-5 p-6 shadow-md w-full">
         Produto de teste
       </div>
     </div>

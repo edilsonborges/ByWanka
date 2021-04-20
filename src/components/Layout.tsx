@@ -2,14 +2,21 @@ import Footer from './Footer'
 import Header from './Header'
 import Navbar from './Navbar'
 import React from 'react'
+import Head from 'next/head'
 
 export default function Layout({ children }) {
   return (
-    <div className="flex flex-col h-screen justify-between">
+    <>
+      <Head>
+        <title>ByWanka</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
-      <Header />
-      {children}
-      <Footer />
-    </div>
+      <div className="flex flex-col h-screen justify-between">
+        <Header />
+        {children}
+        <Footer />
+      </div>
+    </>
   )
 }

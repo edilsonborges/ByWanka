@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 export default function Contact() {
   return (
     <Layout>
-      <div>
+      <div className="self-center">
         <h1>Contact Page</h1>
       </div>
     </Layout>
