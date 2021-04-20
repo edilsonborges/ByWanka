@@ -1,12 +1,8 @@
 import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Sidebar from '../components/Sidebar'
 import Body from '../components/Body'
-import Upload from '../components/Upload'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 
 const Home: React.FC = () => {
   const [session, loading] = useSession()
@@ -16,12 +12,9 @@ const Home: React.FC = () => {
         <title>ByWanka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col h-screen justify-between">
-        <Navbar />
-        <Header />
+      <Layout>
         <Body />
-        <Footer />
-      </div>
+      </Layout>
     </>
   )
 }
