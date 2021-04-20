@@ -10,7 +10,7 @@ const LiItem = () => {
 
 const Sidebar = () => {
   return (
-    <div className="border h-96">
+    <div className="bg-green-300">
       <ul>
         <LiItem />
         <LiItem />

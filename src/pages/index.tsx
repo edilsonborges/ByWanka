@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Sidebar from '../components/Sidebar'
 import Body from '../components/Body'
 import Upload from '../components/Upload'
+import Header from '../components/Header'
 
 const Home: React.FC = () => {
   const [session, loading] = useSession()
@@ -16,27 +17,8 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="flex">
-        {!session && (
-          <>
-            Not signed in <br />
-            <button onClick={(): Promise<void> => signIn('auth0')}>
-              Sign in
-            </button>
-          </>
-        )}
-        {session && (
-          <>
-            Signed in as {session.user.email} <br />
-            <button onClick={(): Promise<void> => signOut('auth0')}>
-              Sign out
-            </button>
-          </>
-        )}
-        <Sidebar />
-        {/* <Upload /> */}
-        <Body />
-      </div>
+      {/* <Header /> */}
+      <Body />
       <Footer />
     </>
   )
