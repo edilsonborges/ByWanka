@@ -16,10 +16,12 @@ const Home: React.FC = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      {/* <Header /> */}
-      <Body />
-      <Footer />
+      <div className="flex flex-col h-screen justify-between">
+        <Navbar />
+        {/* <Header /> */}
+        <Body />
+        <Footer />
+      </div>
     </>
   )
 }
