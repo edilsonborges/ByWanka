@@ -13,12 +13,12 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>ByWanka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col h-screen justify-between">
         <Navbar />
-        {/* <Header /> */}
+        <Header />
         <Body />
         <Footer />
       </div>

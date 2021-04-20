@@ -11,7 +11,10 @@ module.exports = {
         wkpink: "#F1609C",
         wkviolet: "#BC4CC3",
         wkblueviolet: "#8F3DBD"
-      }
+      },
+      width: {
+        '480': "30rem"
+      },
     }
   },
   variants: {
