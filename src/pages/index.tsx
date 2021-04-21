@@ -1,15 +1,40 @@
 import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Body from '../components/Body'
-import Layout from '../components/Layout'
+import Header from '../components/Header'
+import axios from 'axios'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { api } from '../services/api'
 
-const Home: React.FC = () => {
-  const [session, loading] = useSession()
+type Product = {
+  id: string
+  createdAt: string
+  name: string
+  category: string
+  price: string
+  image: string
+}
+
+type Products = {
+  products: Product[]
+}
+
+export default function Home(
+  props: Products
+): InferGetServerSidePropsType<typeof getServerSideProps> {
   return (
-    <Layout>
-      <Body />
-    </Layout>
+    <>
+      <Header />
+      <Body products={props.products} />
+    </>
   )
 }
 
-export default Home
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await api.get('products')
+  return {
+    props: {
+      products: response.data
+    }
+  }
+}

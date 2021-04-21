@@ -1,12 +1,13 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Header from '../components/Header'
 
 export default function Contact() {
   return (
-    <Layout>
+    <>
+      <Header />
       <div className="self-center">
         <h1>Contact Page</h1>
       </div>
-    </Layout>
+    </>
   )
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className="pt-8 flex flex-col self-center w-80">
+    <div className="pt-6 flex flex-col self-center w-80">
       <nav className="flex flex-row justify-between text-gray-500">
         <Link href="/">
           <a className="hover:underline cursor-pointer">Início</a>

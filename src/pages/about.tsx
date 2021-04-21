@@ -1,12 +1,13 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Header from '../components/Header'
 
 export default function About() {
   return (
-    <Layout>
+    <>
+      <Header />
       <div className="self-center">
         <h1>About Page</h1>
       </div>
-    </Layout>
+    </>
   )
 }

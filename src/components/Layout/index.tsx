@@ -1,8 +1,7 @@
-import Footer from './Footer'
-import Header from './Header'
-import Navbar from './Navbar'
 import React from 'react'
 import Head from 'next/head'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function Layout({ children }) {
   return (
@@ -12,8 +11,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="flex flex-col h-screen justify-between">
-        <Header />
+      <div className="flex flex-col content-area justify-between overflow-y-auto">
         {children}
         <Footer />
       </div>
