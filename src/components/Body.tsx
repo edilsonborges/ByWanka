@@ -35,6 +35,8 @@ const Body = ({ products, page, total }) => {
 
   // testing loading all data and slicing
   const startProduct = page * 8 - 7
+  const allowBack = page >= 2
+  const allowForward = page < lastPage
   products = products.slice(page <= 1 ? 0 : startProduct - 1, 7 + startProduct)
 
   return (
@@ -47,15 +49,27 @@ const Body = ({ products, page, total }) => {
           </h3>
           <span className="text-gray-400 text-sm">{total} Itens</span>
           <div>
-            <Link href={page >= 2 ? `/?page=${page - 1}` : '/'}>
-              <button className="bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full outline-none">
+            <Link href={allowBack ? `/?page=${page - 1}` : '/'}>
+              <button
+                disabled={!allowBack}
+                className={
+                  allowBack
+                    ? 'bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full outline-none'
+                    : 'bg-gray-200 text-white mt-6 w-8 h-8 cursor-default rounded-full outline-none'
+                }
+              >
                 &#8249;
               </button>
             </Link>
-            <Link
-              href={page < lastPage ? `/?page=${page + 1}` : `/?page=${page}`}
-            >
-              <button className="bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full float-right outline-none">
+            <Link href={allowForward ? `/?page=${page + 1}` : `/?page=${page}`}>
+              <button
+                disabled={!allowForward}
+                className={
+                  allowForward
+                    ? 'bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full float-right outline-none'
+                    : 'bg-gray-200 text-white mt-6 w-8 h-8 cursor-default rounded-full float-right outline-none'
+                }
+              >
                 &#8250;
               </button>
             </Link>
