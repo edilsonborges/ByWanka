@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Footer = () => {
+export default function Footer() {
   const [date, setDate] = useState()
 
   const getYear = () => setDate(new Date().getFullYear())
@@ -24,4 +24,12 @@ const Footer = () => {
   )
 }
 
-export default Footer
+// export const getStaticProps = () => {
+//   const year = new Date().getFullYear()
+//   console.log('year: ', year)
+//   return {
+//     props: {
+//       year: year
+//     }
+//   }
+// }

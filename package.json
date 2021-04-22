@@ -1,5 +1,5 @@
 {
-  "name": "ByWanka",
+  "name": "bywanka",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@types/mongodb": "^3.6.12",
-    "@types/next": "^9.0.0",
     "@types/next-auth": "^3.13.0",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",

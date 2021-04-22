@@ -1,8 +1,6 @@
 import React from 'react'
-import { signIn, signOut, useSession } from 'next-auth/client'
 import Body from '../components/Body'
 import Header from '../components/Header'
-import axios from 'axios'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { api } from '../services/api'
 
@@ -17,6 +15,8 @@ type Product = {
 
 type Products = {
   products: Product[]
+  page: number
+  total: number
 }
 
 export default function Home(
@@ -25,16 +25,21 @@ export default function Home(
   return (
     <>
       <Header />
-      <Body products={props.products} />
+      <Body products={props.products} page={props.page} total={props.total} />
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await api.get('products')
+export const getServerSideProps: GetServerSideProps = async ({
+  query: { page = 1 }
+}) => {
+  const allProducts = await api.get('products')
+  // const pagedProducts = await api.get(`products?p=${page}&l=8`)
   return {
     props: {
-      products: response.data
+      products: allProducts.data,
+      page: +page,
+      total: +allProducts.data.length
     }
   }
 }

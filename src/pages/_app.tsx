@@ -3,7 +3,7 @@ import { Provider } from 'next-auth/client'
 import '../../styles/main.css'
 import Layout from '../components/Layout'
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Layout>
@@ -14,5 +14,3 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
-export default MyApp
