@@ -1,40 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 // import { useStore } from '../store'
 import Image from 'next/image'
 import Search from './Search'
 import Link from 'next/link'
 import { Products } from '../pages/index'
-import axios from 'axios'
 
-const Card = ({ product }) => {
-  const [url, setUrl] = useState()
-
-  const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
+const Card = ({ product, url }) => {
+  // const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
   // const url = `${product.image}/400/${rand}`
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get('/api/image')
-      setUrl(response.data.url)
-    }
-    fetchData()
-  }, [])
   return (
     <div className="box-border relative transition duration-300 transform cursor-pointer filter hover:brightness-95 hover:scale-105">
-      {console.log(url)}
-      {url ? (
-        <Image
-          className="mb-1 rounded-lg"
-          src={url}
-          width="400"
-          height="400"
-          alt={product.name}
-          objectFit="cover"
-        />
-      ) : (
-        ''
-      )}
-
+      <Image
+        className="mb-1 rounded-lg"
+        src={url}
+        width="400"
+        height="400"
+        alt={product.name}
+        objectFit="cover"
+      />
       <div className="absolute bottom-0 grid w-full p-2 px-5 bg-white rounded-b-lg shadow-md">
         <span>
           #{product.id} - {product.name}
@@ -48,7 +32,7 @@ const Card = ({ product }) => {
   )
 }
 
-const Body = ({ products, page, total }: Products): JSX.Element => {
+const Body = ({ products, page, total, url }: Products): JSX.Element => {
   const lastPage = Math.ceil(total / 8)
   const startProduct = page * 8 - 7
   const productsFiltered = products.slice(
@@ -95,7 +79,7 @@ const Body = ({ products, page, total }: Products): JSX.Element => {
           </div>
           <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {productsFiltered.map((product) => {
-              return <Card key={product.id} product={product} />
+              return <Card key={product.id} product={product} url={url} />
             })}
           </div>
         </div>

@@ -6,7 +6,7 @@ const S3 = new AWS.S3({
     secretAccessKey: process.env.SECRET_ACCESS_KEY
   }
 })
-export default async (req, res) => {
+export default async (req, res): Promise<void> => {
   const signedURL = S3.getSignedUrl('getObject', {
     Bucket: 'bywanka',
     Key: 'allan.jpg',
