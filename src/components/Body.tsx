@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useStore } from '../store'
+import React from 'react'
+// import { useStore } from '../store'
 import Image from 'next/image'
 import Search from './Search'
 import Link from 'next/link'
