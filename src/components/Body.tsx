@@ -13,7 +13,7 @@ const Card = ({ product, url }) => {
     <div className="box-border relative transition duration-300 transform cursor-pointer filter hover:brightness-95 hover:scale-105">
       <Image
         className="mb-1 rounded-lg"
-        src={url}
+        src={product.url}
         width="400"
         height="400"
         alt={product.name}
