@@ -11,13 +11,13 @@ export default function Footer() {
   return (
     <footer className="bg-gray-300">
       <div className="flex flex-row h-1">
-        <div className="bg-wkred flex-grow">&nbsp;</div>
-        <div className="bg-wkyellow flex-grow">&nbsp;</div>
-        <div className="bg-wkorange flex-grow">&nbsp;</div>
-        <div className="bg-wkviolet flex-grow">&nbsp;</div>
-        <div className="bg-wkblueviolet flex-grow">&nbsp;</div>
+        <div className="flex-grow bg-wkred">&nbsp;</div>
+        <div className="flex-grow bg-wkyellow">&nbsp;</div>
+        <div className="flex-grow bg-wkorange">&nbsp;</div>
+        <div className="flex-grow bg-wkviolet">&nbsp;</div>
+        <div className="flex-grow bg-wkblueviolet">&nbsp;</div>
       </div>
-      <div className="container py-1 h-10 px-16">
+      <div className="container h-10 px-16 py-1">
         <div className="text-gray-400">@ByWanka {date}</div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="flex flex-col content-area justify-between overflow-y-auto">
+      <div className="flex flex-col justify-between overflow-y-auto content-area">
         {children}
         <Footer />
       </div>

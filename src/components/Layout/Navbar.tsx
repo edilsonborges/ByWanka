@@ -23,11 +23,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex flex-row h-1">
-        <div className="bg-wkred flex-grow">&nbsp;</div>
-        <div className="bg-wkyellow flex-grow">&nbsp;</div>
-        <div className="bg-wkorange flex-grow">&nbsp;</div>
-        <div className="bg-wkviolet flex-grow">&nbsp;</div>
-        <div className="bg-wkblueviolet flex-grow">&nbsp;</div>
+        <div className="flex-grow bg-wkred">&nbsp;</div>
+        <div className="flex-grow bg-wkyellow">&nbsp;</div>
+        <div className="flex-grow bg-wkorange">&nbsp;</div>
+        <div className="flex-grow bg-wkviolet">&nbsp;</div>
+        <div className="flex-grow bg-wkblueviolet">&nbsp;</div>
       </div>
     </nav>
   )

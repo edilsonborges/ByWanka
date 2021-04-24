@@ -9,15 +9,16 @@ const Card = ({ product }) => {
   const url = `${product.image}/400/${rand}`
 
   return (
-    <div className="relative box-border cursor-pointer filter hover:brightness-95 transition duration-300 transform hover:scale-105">
+    <div className="box-border relative transition duration-300 transform cursor-pointer filter hover:brightness-95 hover:scale-105">
       <Image
-        className="rounded-lg mb-1 "
+        className="mb-1 rounded-lg"
         src={url}
         width="400"
         height="400"
         alt={product.name}
+        objectFit="cover"
       />
-      <div className="absolute bottom-0 rounded-b-lg bg-white px-5 p-2 shadow-md w-full grid">
+      <div className="absolute bottom-0 grid w-full p-2 px-5 bg-white rounded-b-lg shadow-md">
         <span>
           #{product.id} - {product.name}
         </span>
@@ -43,19 +44,19 @@ const Body = ({ products, page, total }) => {
     <main>
       <Search />
       <div className="mt-4 mb-12">
-        <div className="container mx-auto px-6 lg:px-28">
-          <h3 className="text-gray-700 text-2xl font-medium">
+        <div className="container px-6 mx-auto lg:px-28">
+          <h3 className="text-2xl font-medium text-gray-700">
             Nossos produtos
           </h3>
-          <span className="text-gray-400 text-sm">{total} Itens</span>
+          <span className="text-sm text-gray-400">{total} Itens</span>
           <div>
             <Link href={allowBack ? `/?page=${page - 1}` : '/'}>
               <button
                 disabled={!allowBack}
                 className={
                   allowBack
-                    ? 'bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full outline-none'
-                    : 'bg-gray-200 text-white mt-6 w-8 h-8 cursor-default rounded-full outline-none'
+                    ? 'w-8 h-8 mt-6 text-white transition duration-300 bg-gray-600 rounded-full outline-none cursor-pointer hover:bg-gray-500'
+                    : 'w-8 h-8 mt-6 text-white bg-gray-200 rounded-full outline-none cursor-default'
                 }
               >
                 &#8249;
@@ -66,15 +67,15 @@ const Body = ({ products, page, total }) => {
                 disabled={!allowForward}
                 className={
                   allowForward
-                    ? 'bg-gray-600 hover:bg-gray-500 transition duration-300 text-white mt-6 w-8 h-8 cursor-pointer rounded-full float-right outline-none'
-                    : 'bg-gray-200 text-white mt-6 w-8 h-8 cursor-default rounded-full float-right outline-none'
+                    ? 'float-right w-8 h-8 mt-6 text-white transition duration-300 bg-gray-600 rounded-full outline-none cursor-pointer hover:bg-gray-500'
+                    : 'float-right w-8 h-8 mt-6 text-white bg-gray-200 rounded-full outline-none cursor-default'
                 }
               >
                 &#8250;
               </button>
             </Link>
           </div>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => {
               return <Card key={product.id} product={product} />
             })}

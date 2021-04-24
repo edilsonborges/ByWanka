@@ -9,14 +9,14 @@ const handleSubmit = async (e) => {
 }
 export default function Upload() {
   return (
-    <div className="text-center flex-row p-6">
+    <div className="flex-row p-6 text-center">
       <form onSubmit={handleSubmit}>
         <div className="flex-auto">
           <input type="file" multiple />
         </div>
         <div className="flex-auto">
           <button
-            className="bg-blue-600 text-white rounded-2xl w-24 flex-1 cursor-pointer"
+            className="flex-1 w-24 text-white bg-blue-600 cursor-pointer rounded-2xl"
             type="submit"
           >
             Enviar

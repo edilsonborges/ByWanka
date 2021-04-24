@@ -2,7 +2,7 @@ import React from 'react'
 
 const LiItem = () => {
   return (
-    <li className="hover:bg-gray-100 p-2">
+    <li className="p-2 hover:bg-gray-100">
       <a href="#">Categoria</a>
     </li>
   )
