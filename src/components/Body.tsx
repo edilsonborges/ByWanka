@@ -1,24 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { useStore } from '../store'
 import Image from 'next/image'
 import Search from './Search'
 import Link from 'next/link'
 import { Products } from '../pages/index'
+import axios from 'axios'
 
 const Card = ({ product }) => {
-  const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
-  const url = `${product.image}/400/${rand}`
+  const [url, setUrl] = useState()
 
+  const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
+  // const url = `${product.image}/400/${rand}`
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get('/api/image')
+      setUrl(response.data.url)
+    }
+    fetchData()
+  }, [])
   return (
     <div className="box-border relative transition duration-300 transform cursor-pointer filter hover:brightness-95 hover:scale-105">
-      <Image
-        className="mb-1 rounded-lg"
-        src={url}
-        width="400"
-        height="400"
-        alt={product.name}
-        objectFit="cover"
-      />
+      {console.log(url)}
+      {url ? (
+        <Image
+          className="mb-1 rounded-lg"
+          src={url}
+          width="400"
+          height="400"
+          alt={product.name}
+          objectFit="cover"
+        />
+      ) : (
+        ''
+      )}
+
       <div className="absolute bottom-0 grid w-full p-2 px-5 bg-white rounded-b-lg shadow-md">
         <span>
           #{product.id} - {product.name}
