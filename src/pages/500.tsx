@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function Custom500() {
+export default function Custom500(): JSX.Element {
   return (
     <div className="grid self-center mt-32 text-center">
       <Image

@@ -3,6 +3,7 @@ import { useStore } from '../store'
 import Image from 'next/image'
 import Search from './Search'
 import Link from 'next/link'
+import { Products } from '../pages/index'
 
 const Card = ({ product }) => {
   const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
@@ -31,14 +32,15 @@ const Card = ({ product }) => {
   )
 }
 
-const Body = ({ products, page, total }) => {
+const Body = ({ products, page, total }: Products): JSX.Element => {
   const lastPage = Math.ceil(total / 8)
-
-  // testing loading all data and slicing
   const startProduct = page * 8 - 7
+  const productsFiltered = products.slice(
+    page <= 1 ? 0 : startProduct - 1,
+    7 + startProduct
+  )
   const allowBack = page >= 2
   const allowForward = page < lastPage
-  products = products.slice(page <= 1 ? 0 : startProduct - 1, 7 + startProduct)
 
   return (
     <main>
@@ -76,7 +78,7 @@ const Body = ({ products, page, total }) => {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((product) => {
+            {productsFiltered.map((product) => {
               return <Card key={product.id} product={product} />
             })}
           </div>

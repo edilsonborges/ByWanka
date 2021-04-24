@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function dashboard() {
+export default function dashboard(): JSX.Element {
   return (
     <>
       <div className="self-center">

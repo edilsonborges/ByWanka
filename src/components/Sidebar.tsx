@@ -8,7 +8,7 @@ const LiItem = () => {
   )
 }
 
-const Sidebar = () => {
+const Sidebar = (): JSX.Element => {
   return (
     <div className="bg-green-300">
       <ul>

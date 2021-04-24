@@ -13,7 +13,7 @@ type Product = {
   image: string
 }
 
-type Products = {
+export type Products = {
   products: Product[]
   page: number
   total: number

@@ -1,13 +1,11 @@
-import axios from 'axios'
 import React from 'react'
-// const fs = require('fs');
 
 const handleSubmit = async (e) => {
   e.preventDefault()
   console.log(e)
   console.log('sended')
 }
-export default function Upload() {
+export default function Upload(): JSX.Element {
   return (
     <div className="flex-row p-6 text-center">
       <form onSubmit={handleSubmit}>

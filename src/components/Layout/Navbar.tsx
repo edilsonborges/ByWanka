@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   return (
     <nav className="bg-gray-100">
       <div className="flex flex-row justify-between p-2 px-16 text-gray-700 align-middle">

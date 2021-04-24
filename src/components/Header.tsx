@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Header() {
+export default function Header(): JSX.Element {
   return (
     <div className="flex flex-col self-center pt-6 w-80">
       <nav className="flex flex-row justify-between text-gray-500">

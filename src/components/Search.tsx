@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Search() {
+export default function Search(): JSX.Element {
   return (
     <div className="flex flex-col">
       <div className="relative flex-row self-center pt-6">
@@ -18,7 +18,7 @@ export default function Search() {
           </svg>
         </span>
         <input
-          className="p-2 pl-10 border rounded-lg outline-none  w-80 lg:w-480 focus:border-blue-500 focus:shadow-outline"
+          className="p-2 pl-10 border rounded-lg outline-none w-80 lg:w-480 focus:border-blue-500 focus:shadow-outline"
           type="text"
           placeholder="O que está procurando?"
         />
