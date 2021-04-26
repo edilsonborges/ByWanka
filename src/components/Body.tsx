@@ -35,7 +35,12 @@ const Card = ({
   )
 }
 
-const Body = ({ products, page, total, url }: Products): JSX.Element => {
+const Body = ({
+  products,
+  page,
+  total
+}: // , url
+Products): JSX.Element => {
   const lastPage = Math.ceil(total / 8)
   const startProduct = page * 8 - 7
   const productsFiltered = products.slice(
@@ -49,47 +54,55 @@ const Body = ({ products, page, total, url }: Products): JSX.Element => {
     <main>
       <Search />
       <div className="mt-4 mb-12">
-        <div className="container px-6 mx-auto lg:px-28">
-          <h3 className="text-2xl font-medium text-gray-700">
-            Nossos produtos
-          </h3>
-          <span className="text-sm text-gray-400">{total} Itens</span>
-          <div>
-            <Link href={allowBack ? `/?page=${page - 1}` : '/'}>
-              <button
-                disabled={!allowBack}
-                className={
-                  allowBack
-                    ? 'w-8 h-8 mt-6 text-white transition duration-300 bg-gray-600 rounded-full outline-none cursor-pointer hover:bg-gray-500'
-                    : 'w-8 h-8 mt-6 text-white bg-gray-200 rounded-full outline-none cursor-default'
-                }
+        <div className="container px-6 mx-auto mb-16 lg:px-24">
+          <div className="flex">
+            <div className="self-center flex-none mt-20 mr-2">
+              <Link href={allowBack ? `/?page=${page - 1}` : '/'}>
+                <button
+                  disabled={!allowBack}
+                  className={
+                    allowBack
+                      ? 'w-8 h-8 text-white transition duration-300 bg-gray-600 rounded-full cursor-pointer focus:outline-none hover:bg-gray-500'
+                      : 'w-8 h-8 text-white bg-gray-200 rounded-full cursor-default'
+                  }
+                >
+                  &#8249;
+                </button>
+              </Link>
+            </div>
+            <div className="flex-grow">
+              <h3 className="text-2xl font-medium text-gray-700">
+                Nossos produtos
+              </h3>
+              <span className="text-sm text-gray-400">{total} Itens</span>
+              <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {productsFiltered.map((product) => {
+                  return (
+                    <Card
+                      key={product.id}
+                      product={product}
+                      // url={url}
+                    />
+                  )
+                })}
+              </div>
+            </div>
+            <div className="self-center flex-none mt-20 ml-2">
+              <Link
+                href={allowForward ? `/?page=${page + 1}` : `/?page=${page}`}
               >
-                &#8249;
-              </button>
-            </Link>
-            <Link href={allowForward ? `/?page=${page + 1}` : `/?page=${page}`}>
-              <button
-                disabled={!allowForward}
-                className={
-                  allowForward
-                    ? 'float-right w-8 h-8 mt-6 text-white transition duration-300 bg-gray-600 rounded-full outline-none cursor-pointer hover:bg-gray-500'
-                    : 'float-right w-8 h-8 mt-6 text-white bg-gray-200 rounded-full outline-none cursor-default'
-                }
-              >
-                &#8250;
-              </button>
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {productsFiltered.map((product) => {
-              return (
-                <Card
-                  key={product.id}
-                  product={product}
-                  // url={url}
-                />
-              )
-            })}
+                <button
+                  disabled={!allowForward}
+                  className={
+                    allowForward
+                      ? 'float-right w-8 h-8 text-white transition duration-300 bg-gray-600 rounded-full cursor-pointer focus:outline-none hover:bg-gray-500'
+                      : 'float-right w-8 h-8 text-white bg-gray-200 rounded-full cursor-default'
+                  }
+                >
+                  &#8250;
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
