@@ -2,8 +2,8 @@ import React from 'react'
 import Body from '../components/Body'
 import Header from '../components/Header'
 import {
-  GetStaticProps,
-  InferGetStaticPropsType,
+  // GetStaticProps,
+  // InferGetStaticPropsType,
   GetServerSideProps,
   InferGetServerSidePropsType
 } from 'next'

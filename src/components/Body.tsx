@@ -5,7 +5,10 @@ import Search from './Search'
 import Link from 'next/link'
 import { Products } from '../pages/index'
 
-const Card = ({ product, url }) => {
+const Card = ({
+  product
+  // , url
+}) => {
   // const rand = Math.floor(Math.random() * (420 - 400 + 1) + 400)
   // const url = `${product.image}/400/${rand}`
 
@@ -79,7 +82,13 @@ const Body = ({ products, page, total, url }: Products): JSX.Element => {
           </div>
           <div className="grid grid-cols-1 gap-12 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {productsFiltered.map((product) => {
-              return <Card key={product.id} product={product} url={url} />
+              return (
+                <Card
+                  key={product.id}
+                  product={product}
+                  // url={url}
+                />
+              )
             })}
           </div>
         </div>

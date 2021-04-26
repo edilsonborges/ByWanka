@@ -16,10 +16,14 @@ const Navbar = (): JSX.Element => {
             />
           </div>
         </Link>
-        <div className="pt-1">
-          <a href="#">Cadastrar</a>
+        <div className="pt-3">
+          <Link href="signup">
+            <a href="#">Cadastrar</a>
+          </Link>
           {' | '}
-          <a href="#">Logar</a>
+          <Link href="signin">
+            <a href="#">Logar</a>
+          </Link>
         </div>
       </div>
       <div className="flex flex-row h-1">
