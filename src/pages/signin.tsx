@@ -1,7 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 export default function signin(): JSX.Element {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm()
   return (
     <div className="flex flex-col bg-gray-100 content-area">
       <div className="container flex items-center justify-center flex-1 max-w-md px-2 mx-auto">
