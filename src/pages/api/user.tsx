@@ -19,6 +19,11 @@ export default async (
 ): Promise<void> => {
   const { fullName, email, password, confirmPassword } = req.body
 
+  if (password !== confirmPassword) {
+    res.status(400).json({ error: "Passowrd doesn't mach" })
+    return
+  }
+
   if (!fullName || !email || !password || !confirmPassword) {
     res.status(400).json({ error: 'Missing Values' })
     return
@@ -30,8 +35,7 @@ export default async (
     const response = await db.collection('users').insertOne({
       fullName,
       email,
-      password,
-      confirmPassword
+      password
     })
     res.status(200).json(response.ops[0])
   }
