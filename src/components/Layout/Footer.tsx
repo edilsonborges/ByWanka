@@ -17,7 +17,10 @@ export default function Footer(): JSX.Element {
         <div className="flex-grow bg-wkblueviolet">&nbsp;</div>
       </div>
       <div className="container h-10 px-16 py-1">
-        <div className="text-gray-400">@ByWanka {date}</div>
+        <div className="text-gray-400">
+          {/* @ByWanka  */}
+          {date}
+        </div>
       </div>
     </footer>
   )
