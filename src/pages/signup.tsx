@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Link from 'next/link'
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -16,8 +17,13 @@ export default function signup(): JSX.Element {
     formState: { errors }
   } = useForm<FormValue>()
 
-  const sendForm = (e) => {
-    console.log(e)
+  const sendForm = async (data) => {
+    try {
+      const response = await axios.post('api/user', data)
+      console.log('response: ', response)
+    } catch (error) {
+      console.log('error: ', error)
+    }
   }
   console.log(errors)
 
@@ -28,32 +34,52 @@ export default function signup(): JSX.Element {
           <h1 className="mb-8 text-3xl text-center">Cadastre-se</h1>
           <form onSubmit={handleSubmit(sendForm)}>
             <input
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className={
+                'w-full p-3 mb-4 rounded outline-none ' +
+                (errors.fullName
+                  ? 'border-2 border-red-400'
+                  : 'border border-gray-300')
+              }
               type="text"
               name="fullname"
               placeholder="Nome Completo"
-              {...(register('fullName'), { required: true })}
+              {...register('fullName', { required: true })}
             />
             <input
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className={
+                'w-full p-3 mb-4 rounded outline-none ' +
+                (errors.email
+                  ? 'border-2 border-red-400'
+                  : 'border border-gray-300 ')
+              }
               type="text"
               name="email"
               placeholder="Email"
-              {...(register('email'), { required: true })}
+              {...register('email', { required: true })}
             />
             <input
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className={
+                'w-full p-3 mb-4 rounded outline-none ' +
+                (errors.password
+                  ? 'border-2 border-red-400'
+                  : 'border border-gray-300 ')
+              }
               type="password"
               name="password"
               placeholder="Senha"
-              {...(register('password'), { required: true })}
+              {...register('password', { required: true })}
             />
             <input
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className={
+                'w-full p-3 mb-4 rounded outline-none ' +
+                (errors.confirmPassword
+                  ? 'border-2 border-red-400'
+                  : 'border border-gray-300 ')
+              }
               type="password"
-              name="confirm_password"
+              name="confirmPassword"
               placeholder="Confirme a senha"
-              {...(register('confirmPassword'), { required: true })}
+              {...register('confirmPassword', { required: true })}
             />
             <input
               type="submit"
