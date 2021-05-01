@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Link from 'next/link'
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -9,8 +10,13 @@ export default function signin(): JSX.Element {
     formState: { errors }
   } = useForm()
 
-  const sendForm = (data) => {
-    console.log(data)
+  const sendForm = async (data) => {
+    try {
+      const response = await axios.post('api/checkUser', data)
+      console.log('response: ', response)
+    } catch (error) {
+      console.log('error: ', error)
+    }
   }
 
   return (

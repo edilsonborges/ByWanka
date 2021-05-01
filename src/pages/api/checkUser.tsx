@@ -16,14 +16,9 @@ export default async (
   req: NextApiRequest,
   res: NextApiResponse<ErrorResponseType | SuccessResponseType>
 ): Promise<void> => {
-  const { fullName, email, password, confirmPassword } = req.body
+  const { email, password } = req.body
 
-  if (password !== confirmPassword) {
-    res.status(400).json({ error: "Passowrd doesn't mach" })
-    return
-  }
-
-  if (!fullName || !email || !password || !confirmPassword) {
+  if (!email || !password) {
     res.status(400).json({ error: 'Missing Values' })
     return
   }
@@ -31,11 +26,11 @@ export default async (
   const { db } = await connect()
 
   if (req.method === 'POST') {
-    const response = await db.collection('users').insertOne({
-      fullName,
-      email,
-      password
-    })
-    res.status(200).json(response.ops[0])
+    const query = {
+      email
+    }
+    const response = await db.collection('users').find(query)
+    console.log(response)
+    res.status(200).json(response)
   }
 }
