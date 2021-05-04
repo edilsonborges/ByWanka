@@ -11,7 +11,6 @@ export default function Layout({
   return (
     <>
       <Head>
-        {/* <title>Test</title> */}
         <title>ByWanka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
