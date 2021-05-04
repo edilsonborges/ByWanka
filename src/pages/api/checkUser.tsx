@@ -19,7 +19,7 @@ export default async (
   const { email, password } = req.body
 
   if (!email || !password) {
-    res.status(400).json({ error: 'Missing Values' })
+    res.status(400).json({ error: 'Digite o email e a senha' })
     return
   }
 

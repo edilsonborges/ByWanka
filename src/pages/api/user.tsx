@@ -20,12 +20,12 @@ export default async (
   const { fullName, email, password, confirmPassword } = req.body
 
   if (password !== confirmPassword) {
-    res.status(400).json({ error: "Passowrd doesn't mach" })
+    res.status(400).json({ error: "Senhas não conferem" })
     return
   }
 
   if (!fullName || !email || !password || !confirmPassword) {
-    res.status(400).json({ error: 'Missing Values' })
+    res.status(400).json({ error: 'Preencha todos os campos' })
     return
   }
 
