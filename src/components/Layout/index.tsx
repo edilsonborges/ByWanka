@@ -12,7 +12,7 @@ export default function Layout({
     <>
       <Head>
         <title>Test</title>
-        {/* <title>ByWanka</title> */}
+        <title>ByWanka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />

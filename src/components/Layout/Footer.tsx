@@ -18,7 +18,7 @@ export default function Footer(): JSX.Element {
       </div>
       <div className="container h-10 px-16 py-1">
         <div className="text-gray-400">
-          {/* @ByWanka  */}
+          @ByWanka
           {date}
         </div>
       </div>

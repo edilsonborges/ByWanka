@@ -8,12 +8,12 @@ const Navbar = (): JSX.Element => {
       <div className="flex flex-row justify-between p-2 px-16 text-gray-700 align-middle">
         <Link href="/">
           <div className="cursor-pointer">
-            {/* <Image
+            <Image
               src="/img/logo-bywanka.png"
               alt="Logo"
               width="100"
               height="38"
-            /> */}
+            />
           </div>
         </Link>
         <div className="pt-3">
