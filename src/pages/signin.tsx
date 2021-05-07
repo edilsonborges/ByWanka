@@ -10,10 +10,13 @@ export default function signin(): JSX.Element {
     formState: { errors }
   } = useForm()
 
+ const { token, setToken } = useToken();
+
   const sendForm = async (data) => {
     try {
       const response = await axios.post('api/checkUser', data)
       console.log('response: ', response)
+
     } catch (error) {
       console.log('error: ', error)
     }
