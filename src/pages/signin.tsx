@@ -2,6 +2,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import UseToken from '../components/UseToken'
 
 export default function signin(): JSX.Element {
   const {
@@ -10,7 +11,7 @@ export default function signin(): JSX.Element {
     formState: { errors }
   } = useForm()
 
- const { token, setToken } = useToken();
+  const { token, setToken } = UseToken();
 
   const sendForm = async (data) => {
     try {
