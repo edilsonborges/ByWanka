@@ -63,7 +63,7 @@ const [dropdownOpen, setDropdownOpen] = useState(false);
         </nav>
       </div>
       <div className="flex flex-col flex-1 overflow-hidden">
-        {/* <header className="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600">
+        <header className="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600">
             <div className="flex items-center">
               <button onClick={() =>
                   setSidebarOpen(true)} className="text-gray-500 focus:outline-none lg:hidden">
@@ -160,7 +160,7 @@ const [dropdownOpen, setDropdownOpen] = useState(false);
                   </div>
               </div>
             </div>
-        </header> */}
+        </header>
 
         {/* <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
             <div className="container px-6 py-8 mx-auto">
