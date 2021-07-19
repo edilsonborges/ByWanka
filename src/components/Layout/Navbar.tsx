@@ -17,11 +17,11 @@ const Navbar = (): JSX.Element => {
           </div>
         </Link>
         <div className="pt-3">
-          <Link href="signup">
+          <Link href="Signup">
             <a href="#">Cadastrar</a>
           </Link>
           {' | '}
-          <Link href="signin">
+          <Link href="Signin">
             <a href="#">Logar</a>
           </Link>
         </div>

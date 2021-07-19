@@ -20,7 +20,7 @@ export default async (
   const { fullName, email, password, confirmPassword } = req.body
 
   if (password !== confirmPassword) {
-    res.status(400).json({ error: "Senhas não conferem" })
+    res.status(400).json({ error: 'Senhas não conferem' })
     return
   }
 

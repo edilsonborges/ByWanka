@@ -10,7 +10,7 @@ type FormValue = {
   confirmPassword: string
 }
 
-export default function signup(): JSX.Element {
+export default function Signup(): JSX.Element {
   const {
     register,
     handleSubmit,
@@ -89,7 +89,7 @@ export default function signup(): JSX.Element {
           </form>
           <div className="mt-4 text-gray-700">
             Já tem uma conta?{' '}
-            <Link href="/signin">
+            <Link href="/Signin">
               <a className="text-blue-500 underline"> Logue-se</a>
             </Link>
           </div>

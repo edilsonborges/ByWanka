@@ -11,6 +11,7 @@ export default function Custom500(): JSX.Element {
         width="400"
         height="400"
         objectFit="cover"
+        alt=""
       />
       Oops! Parece que deu ruim 🥺
       <Link href="/">

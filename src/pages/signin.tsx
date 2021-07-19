@@ -4,20 +4,19 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import UseToken from '../components/UseToken'
 
-export default function signin(): JSX.Element {
+export default function Signin(): JSX.Element {
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm()
 
-  const { token, setToken } = UseToken();
+  const { token, setToken } = UseToken()
 
   const sendForm = async (data) => {
     try {
       const response = await axios.post('api/checkUser', data)
       console.log('response: ', response)
-
     } catch (error) {
       console.log('error: ', error)
     }
@@ -59,7 +58,7 @@ export default function signin(): JSX.Element {
           </form>
           <div className="mt-4 text-gray-700">
             Não tem uma conta?{' '}
-            <Link href="/signup">
+            <Link href="/Signup">
               <a className="text-blue-500 underline"> Cadastre-se</a>
             </Link>
           </div>

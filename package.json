@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "dev-build": "set NODE_ENV=development && next build",
     "start": "next start"
   },
   "dependencies": {

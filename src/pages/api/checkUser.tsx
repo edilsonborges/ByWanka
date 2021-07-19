@@ -12,7 +12,7 @@ interface ErrorResponseType {
   error: string
 }
 
-export default async (
+const checkUser = async (
   req: NextApiRequest,
   res: NextApiResponse<ErrorResponseType | SuccessResponseType>
 ): Promise<void> => {
@@ -26,11 +26,15 @@ export default async (
   const { db } = await connect()
 
   if (req.method === 'POST') {
-
-    const users = await db.collection('users').find({
-      email
-    }).forEach(response => {
-      res.status(200).json(response)
-    });
+    const users = await db
+      .collection('users')
+      .find({
+        email
+      })
+      .forEach((response) => {
+        res.status(200).json(response)
+      })
   }
 }
+
+export default checkUser
